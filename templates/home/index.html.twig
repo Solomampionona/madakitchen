@@ -1,6 +1,48 @@
 {% extends 'base.html.twig' %}
+
+{% block carousel %}
+{% endblock %}
+
 {% block content %}
-		
+<h3 class="mt-4">Nos meilleures ventes</h3>
+<p>Découvrez les plats les plus commandés</p>
+<div class="row">
+    {% for product in products %}
+        <div class="col-md-3">
+            {% include "product/single_product.html.twig" %}
+        </div>
+    {% endfor %}
+</div>
 
+<hr class="featurette-divider">
 
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">
+            <span class="text-muted"> Une cuisine faites avec amour.</span>
+        </h2>
+        <p class="lead">Bienvenue chez Madakitchen ! Nous sommes fiers de vous proposer une sélection exquise de plats malgaches authentiques, préparés avec passion et savoir-faire. Explorez notre menu et plongez dans les délices culinaires uniques de Madagascar.Nous nous engageons à utiliser des ingrédients locaux et frais pour chaque plat que nous proposons.
+             Cela nous permet de soutenir les agriculteurs locaux tout en vous offrant des saveurs authentiques et une qualité exceptionnelle. </div>
+    <div class="col-md-5">
+        <img src="{{ asset('assets/img/produitsmalagaches.jpeg') }}" alt="Un savoir-faire malgache" class="img-fluid">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        
+        <h2 class="featurette-heading">
+            <span class="text-align-center ">Saveurs incontournales</span>
+        </h2>
+        <p class="lead">Découvrez une variété de plats typiques de Madagascar, des incontournables aux trésors cachés. De l'aromaticité du Romazava à la texture onctueuse du Ravitoto, chacun de nos plats est préparé avec les meilleurs ingrédients, garantissant une expérience gustative inoubliable.
+            Commandez vos plats malgaches préférés en ligne et faites-les livrer chez vous. Notre service de livraison rapide vous garantit de savourer nos spécialités directement chez vous, sans quitter votre domicile.
+
+            .</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img src="{{ asset('assets/img/crevettes.jpeg') }}" alt="Restaurant ouvert le week-end" class="img-fluid ">
+    </div>
+</div>		
 {% endblock  %}

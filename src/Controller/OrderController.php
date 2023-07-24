@@ -102,7 +102,7 @@ class OrderController extends AbstractController
             ]);
 
         }
-        //sinon renvoi vesrs le panier
+        //sinon renvoi vers le panier
         return $this->redirectToRoute('cart');
         
 

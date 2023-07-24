@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes-nous? - Madakitchen{% endblock %}
+
+{% block content %}
+<h2 class="mt-4">Découvrez l'authentique cuisine malgache</h2>
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h3 class="featurette-heading">
+            <span class="text-muted"> Nos engagements.</span>
+        </h3>
+        <p class="lead">epuis des générations, notre famille a partagé l'amour pour la cuisine malgache. Nous avons hérité de recettes traditionnelles transmises de génération en génération. C'est cette richesse culturelle que nous souhaitons partager avec vous aujourd'hui à travers Saveurs de Madagascar.
+            Chez MadaKitchen, nous croyons que la cuisine est bien plus qu'une simple nourriture, c'est une expérience culturelle. Notre objectif est de vous faire découvrir la diversité de la gastronomie malgache et de partager avec vous une partie de notre patrimoine culinaire.</p>
+    </div>
+    <div class="col-md-5">
+        <img src="{{ asset('assets/img/platsroyales.jpeg') }}" alt="Un savoir-faire malgache" class="img-fluid">
+        <hr>
+    </div>
+</div>
+
+
+
+<div class="row featurette">
+    <div class="col-md-7 order-md-1">
+        <h3 class="featurette-heading">
+            <span class="text-muted">Evenements Spéciaux</span>
+        </h3>
+        <p class="lead">Rendez vos événements spéciaux encore plus mémorables en optant pour notre service traiteur. Que ce soit pour un anniversaire, un mariage ou une réunion de famille, nos plats malgaches ajouteront une touche d'authenticité et de saveurs uniques à votre fête.
+            Vous avez des questions, des suggestions ou simplement envie de partager votre expérience chez Saveurs de Madagascar ? N'hésitez pas à nous contacter. Notre équipe chaleureuse est là pour vous aider.Rejoignez-nous sur les réseaux sociaux pour rester informé des dernières nouvelles, des offres spéciales et des événements à venir. 
+            Suivez-nous sur Facebook, Instagram et Twitter..</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img src="{{ asset('assets/img/divers.jpeg') }}" alt="Une boutique ouverte toute l'année" class="img-fluid">
+        <hr>
+        <img src="{{ asset('assets/img/ravina.jpeg') }}" alt="Une boutique ouverte toute l'année" class="img-fluid">
+    </div>
+</div>		
+<hr>
+<div class="text-center">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2635.185813955845!2d2.230250287528311!3d48.663688997321984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5d7a395306665%3A0x7bc6e0e6734b8fd2!2s31%20Rue%20Mozart%2C%2091620%20Nozay!5e0!3m2!1sfr!2sfr!4v1690228675690!5m2!1sfr!2sfr"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+
+{% endblock %}

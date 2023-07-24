@@ -1,11 +1,13 @@
 body {
   position: relative;
   min-height: 100vh;
+  
 }
 
 .navbar_item_custom,
 .navbar_item_custom a {
   color: #fff;
+  
 }
 
 .footer-custom {

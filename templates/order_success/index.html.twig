@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Confirmation de commande</h2>
-<p>Bonjour {{ order.user.firstname}}{{ order.user.lastname}},<br/><br/>
+<p>Bonjour {{ order.user.firstname}} {{ order.user.lastname}},<br/><br/>
     Nous vous remercions pour votre commande n°{{ order.reference }}.<br/>
     Une confirmation vient de vous être envoyé par email à l'adresse {{order.user.email}}.
     <hr>
@@ -12,5 +12,5 @@
     {{ order.delivery|raw}}
 
 </p>
-Pour suivre votre commande ,rendez-vous dans votre <a href="{{path('account')}}">compte </a>
+Pour suivre votre commande ,rendez-vous dans votre <a href="{{path('account_order')}}">compte </a>
 {% endblock %}

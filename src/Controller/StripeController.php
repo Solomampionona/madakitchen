@@ -24,13 +24,14 @@ class StripeController extends AbstractController
         $YOUR_DOMAIN = 'http://127.0.0.1:8000';
  
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);
- 
+        //pour sécuriser en cas de commande inexistante
+        //si jamais il trouve pas order
         if (!$order) {
-            // new JsonResponse(['error'=> 'order']);
-            $this->redirectToRoute('order');
+            new JsonResponse(['error'=> 'order']);
+            //$this->redirectToRoute('order');
         }
         foreach ($order->getOrderDetails()->getValues() as $product) {
-            $product_object = $entityManager->getRepository(Product::class)->findOneBy(['name' => $product->getProduct()]);
+            $product_object = $entityManager->getRepository(Product::class)->findOneByName($product->getProduct());
             $product_for_stripe[] = [
                 'price_data' => [
                     'currency' => 'eur',
@@ -70,9 +71,17 @@ class StripeController extends AbstractController
             'success_url' => $YOUR_DOMAIN . '/commande/merci/{CHECKOUT_SESSION_ID}',
             'cancel_url' => $YOUR_DOMAIN . '/commande/erreur/{CHECKOUT_SESSION_ID}',
         ]);
+        // $order->setStripeSessionId($checkout_session->id);
+        // $entityManager->flush();
+        // $response = new JsonResponse(['id'=>$checkout_session->id]);
+        // return $response;
         $order->setStripeSessionId($checkout_session->id);
+      //ici persist n'est pas utile car l'objet est déjà créé
         $entityManager->flush();
-        $response = new JsonResponse(['id'=>$checkout_session->id]);
-        return $response;
+        header("HTTP/1.1 303 See Other");
+        header("Location: " . $checkout_session->url);
+        
+        return $this->redirect($checkout_session->url, 303);
+        
     }
 }

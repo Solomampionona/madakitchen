@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="kitchen">
-    <meta name="author" content="Raoiliarison Solomampionona">
+    <meta name="Raoiliarison Soloammpionona" content="plats-malgaches">
 	
     <title>
         {% block title %}MadaKitchen{% endblock %}
@@ -37,7 +37,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="{{ path('home')}}">MadaKitchen</a>
+            <a class="navbar-brand" href="{{ path('home')}}"><img src="{{ asset('assets/img/logo_madakitchen.png') }}" 
+                height="50px" alt="logo mada kitchen"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,10 +48,10 @@
                         <a class="nav-link" href="{{ path('products')}}">Nos produits</a>
                     </li>	
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Qui sommes-nous?</a>
+                        <a class="nav-link" href="{{ path('apropos')}}">Qui sommes-nous?</a>
                     </li>					
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{ path('contact')}}">Contact</a>
                     </li>
 
                 </ul>
@@ -68,12 +69,11 @@
                         <a href="{{ path('register')}}">Inscription</a>
 
                     {% endif %}
-                </div>
-                <a href="{{ path('cart')}}" class="ml-1"><img src="{{ asset('/assets/img/shopping-cart.png')}}" alt="mon panier" height="20"></a>
+                </div> 
+                <a href="{{ path('cart')}}" class="badge bg-dark text-white ms-1 rounded-pill"><img src="{{ asset('/assets/img/shopping-cart.png')}}" alt="mon panier" height="20"></a>
             </div>
         </nav>
         {% if block('carousel') is defined %}
-
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                 {% for key, header in headers %}
@@ -82,7 +82,7 @@
                 </ol>
                 <div class="carousel-inner">
                 {% for key,header in headers %}						
-                        <div class="carousel-item  {% if key == 0 %}active{% endif %}" >
+                        <div class="carousel-item  {% if key == 0 %}active{% endif %}" style="background: url({{ asset('/uploads/' ~ header.illustration) }});background-size: cover;background-position: center;">
                             <div class="container">
                                 <div class="carousel-caption text-left">
                                     <h1>{{header.title}}</h1>
@@ -94,11 +94,11 @@
                         </div>
                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                        <span class="sr-only">Précédent</span>
                     </a>
                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                        <span class="sr-only">Suivant</span>
                     </a>
                 {% endfor %}
             </div>
@@ -113,7 +113,7 @@
             
         <footer class="footer-custom bg-dark text-white">
             <p>&copy; Copyright MadaKitchen 2023<br>
-               <small><a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+               <small><a href="#">Paiement sécurisés</a> &middot; <a href="#">CGV</a>&middot;<a href="#">Mentions Légales</a>
                 </small>
             </p>
         </footer>
