@@ -68,8 +68,8 @@ class StripeController extends AbstractController
                 'card',
             ],
             'mode' => 'payment',
-            'success_url' => $YOUR_DOMAIN = "//www.madakitchen.fr". '/commande/merci/{CHECKOUT_SESSION_ID}',
-            'cancel_url' => $YOUR_DOMAIN = "//www.madakitchen.fr". '/commande/erreur/{CHECKOUT_SESSION_ID}',
+            'success_url' => $YOUR_DOMAIN . '/commande/merci/{CHECKOUT_SESSION_ID}',
+            'cancel_url' => $YOUR_DOMAIN . '/commande/erreur/{CHECKOUT_SESSION_ID}',
         ]);
         // $order->setStripeSessionId($checkout_session->id);
         // $entityManager->flush();
