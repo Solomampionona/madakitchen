@@ -21,7 +21,7 @@ class StripeController extends AbstractController
     public function index(EntityManagerInterface $entityManager,Cart $cart, $reference)
     {
         $product_for_stripe = [];
-        $YOUR_DOMAIN = 'http://127.0.0.1:8000';
+        $YOUR_DOMAIN = 'https://www.madakitchen.fr/';
  
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);
         //pour sécuriser en cas de commande inexistante
@@ -68,8 +68,8 @@ class StripeController extends AbstractController
                 'card',
             ],
             'mode' => 'payment',
-            'success_url' => $YOUR_DOMAIN . '/commande/merci/{CHECKOUT_SESSION_ID}',
-            'cancel_url' => $YOUR_DOMAIN . '/commande/erreur/{CHECKOUT_SESSION_ID}',
+            'success_url' => $YOUR_DOMAIN = "//www.madakitchen.fr". '/commande/merci/{CHECKOUT_SESSION_ID}',
+            'cancel_url' => $YOUR_DOMAIN = "//www.madakitchen.fr". '/commande/erreur/{CHECKOUT_SESSION_ID}',
         ]);
         // $order->setStripeSessionId($checkout_session->id);
         // $entityManager->flush();
