@@ -21,7 +21,7 @@ class StripeController extends AbstractController
     public function index(EntityManagerInterface $entityManager,Cart $cart, $reference)
     {
         $product_for_stripe = [];
-        $YOUR_DOMAIN = 'https://www.madakitchen.fr/';
+        $YOUR_DOMAIN = 'https://www.madakitchen.fr';
  
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);
         //pour sécuriser en cas de commande inexistante
