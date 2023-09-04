@@ -48,7 +48,7 @@ class StripeController extends AbstractController
         $product_for_stripe[] = [
             'price_data' => [
                 'currency' => 'eur',
-                'unit_amount' => $order->getCarrierPrice() * 100,
+                'unit_amount' => $order->getCarrierPrice() ,
                 'product_data' => [
                     'name' => $order->getCarrierName(),
                     'images' => [$YOUR_DOMAIN],
@@ -82,6 +82,6 @@ class StripeController extends AbstractController
         header("Location: " . $checkout_session->url);
         
         return $this->redirect($checkout_session->url, 303);
-        
+       
     }
 }

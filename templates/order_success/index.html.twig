@@ -6,9 +6,9 @@
 <h2>Confirmation de commande</h2>
 <p>Bonjour {{ order.user.firstname}} {{ order.user.lastname}},<br/><br/>
     Nous vous remercions pour votre commande n°{{ order.reference }}.<br/>
-    Une confirmation vient de vous être envoyé par email à l'adresse {{order.user.email}}.
+    Une confirmation vient de vous être envoyé par email à l'adresse <strong>{{order.user.email}}</strong>.
     <hr>
-    Votre commande sera livrée par <strong>{{ order.carrierName}}</strong>à l'adresse suivante: <br>
+    Votre commande sera livrée par <strong>{{ order.carrierName}} </strong> à l'adresse suivante: <br>
     {{ order.delivery|raw}}
 
 </p>

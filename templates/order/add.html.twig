@@ -29,7 +29,7 @@
         <h4>Ma commande</h4>
     </div>
     <div class="order-summary">
-        {% set total=null %}
+        {% set total = null %}
         {% for key, product in cart %}
             <div class="row {% if key > 0 %}mt-2{% endif %}">
                 <div class="col-2">
@@ -42,19 +42,23 @@
                     x{{product.quantity}}</small>
                 </div>
                 <div class="col-2 my-auto">
-                    {{ (product.product.price /100)|number_format(2, ',', '.') }}€
+                    {{ (product.product.price / 100)|number_format(2, ',', '.') }}€
                 </div>
             </div>
             {% set total = total + (product.product.price * product.quantity) %}
         {% endfor %}
     </div>
+    <div class="text-right">
+    
     <hr>
-    <strong>Sous-total :</strong>{{ (total /100 )| number_format(2, ',','.')}} &euro;<br/>
-    <strong>Livraison:</strong>{{ ( carrier.price/100 )| number_format(2, ',','.')}} &euro;
-    <hr>
-    <strong>Total : </strong> {{ ((total /100 )+ carrier.price/100)| number_format(2, ',','.')}} &euro;
-  
-    <a href="{{ path('stripe_create_session',{'reference': reference}) }}" class="btn btn-success btn-block mt-3" id="checkout-button">Payer | {{ ((total /100 )+ carrier.price/100)| number_format(2, ',','.')}} &euro;</a>
+    <strong>Sous-total :</strong>{{ (total / 100 )|number_format(2, ',','.')}} &euro;<br/>
+    <strong>Livraison:</strong>{{ ( carrier.price / 100 )|number_format(2, ',','.')}} &euro;<br/>
+    <strong>Total : </strong> {{ ((total / 100 )+ carrier.price / 100)|number_format(2, ',','.')}} &euro;
+</div> 
+
+    <a href="{{ path('stripe_create_session',{'reference': reference}) }}"
+     class="btn btn-success btn-block mt-3" id="checkout-button">
+     Payer | {{ ((total / 100)+ carrier.price / 100)|number_format(2, ',','.')}} &euro;</a>
   </div>
  
 </div>
@@ -74,7 +78,7 @@
 				.then(function (session) {
 					if(session.error === 'order'){
                         //redirection/securite si jamais il y a pas de commande
-                        window.location.replace ('{{ path('order')}}');
+                        window.location.replace ('{{ path('order') }}');
                      } else {
                         return stripe.redirectToCheckout({sessionId: session.id});
 					 }

@@ -59,9 +59,13 @@ class Order
     {   
         $total = null;
 
-        foreach ($this->getOrderDetails()->getValues() as $product);
-        $total= $total + ($product->getPrice() * $product->getQuantity());
-    
+        foreach ($this->getOrderDetails()->getValues() as $product){
+
+            $total= $total + ($product->getPrice() * $product->getQuantity());
+
+        }
+        return $total;
+        
     }
        
 

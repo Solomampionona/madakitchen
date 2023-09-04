@@ -61,7 +61,7 @@ class AccountAddressController extends AbstractController
         $form=$this->createForm(AddressType::class,$address);
 
         $form->handleRequest($request);
-
+        //verifier que le formulaire est soumis et l 'utilisateur est vraiment le user
         if($form->isSubmitted()&& $form->isValid()){
             $address->setUser($this->getUser());
             $this->entityManager->persist($address);
@@ -69,7 +69,7 @@ class AccountAddressController extends AbstractController
             return $this->redirectToRoute('account_address');
 
         }
-
+        //inviter le client a creer son adresse au cas ou?
         return $this->render('account/address_form.html.twig',[
             'form'=> $form->createView()
         ]);
@@ -83,9 +83,7 @@ class AccountAddressController extends AbstractController
             $this->entityManager->remove($address);
             $this->entityManager->flush();
         }
-    
             return $this->redirectToRoute('account_address');
-
      }
 
     

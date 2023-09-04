@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block content%} 
+<div class="col-12 align-center">
+<h1>Inscrivez-vous</h1>
 
-<h1>Inscription</h1>
 {% if notification %}
 <div class="alert alert-info ">{{ notification }}</div>
 <hr>
 
 {% endif %}
 {{ form(form)}}
+</div>
 
 
 {% endblock %}

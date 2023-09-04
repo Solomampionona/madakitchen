@@ -5,30 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="kitchen">
     <meta name="Raoiliarison Soloammpionona" content="plats-malgaches">
-	
     <title>
         {% block title %}MadaKitchen{% endblock %}
     </title>
-
+    <!-- Favicon-->
+    <link rel="icon" type="img/icon" href="{{ asset('/assets/img/favicon.ico')}}" />
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }} " rel="stylesheet">
     {% block javascript %} {% endblock %}
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media(min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+    
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/restaurant.css') }}">
@@ -70,7 +55,9 @@
 
                     {% endif %}
                 </div> 
-                <a href="{{ path('cart')}}" class="badge bg-dark text-white ms-1 rounded-pill"><img src="{{ asset('/assets/img/shopping-cart.png')}}" alt="mon panier" height="20"></a>
+                <a href="{{ path('cart')}}" class="position-relative top-13 end-100 translate-middle badge rounded-pill bg-dark">
+                    <img src="{{ asset('/assets/img/shopping-cart.png')}}" alt="mon panier" height="20"> {{ app.session.get('cart') ? app.session.get('cart')|reduce((carry, v) => carry + v) :'0'}}</a>
+   
             </div>
         </nav>
         {% if block('carousel') is defined %}
@@ -112,8 +99,35 @@
         </div>
             
         <footer class="footer-custom bg-dark text-white">
+             {# <!-- Section: Social media -->
+    <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section> #}
             <p>&copy; Copyright MadaKitchen 2023<br>
-               <small><a href="#">Paiement sécurisés</a> &middot; <a href="#">CGV</a>&middot;<a href="#">Mentions Légales</a>
+               <small><a href="#">Paiement sécurisés avec Stripe</a> &middot; <a href="#">CGV</a>&middot;<a href="#">Mentions Légales</a>&middot;<a href="#">Cookies</a>
                 </small>
             </p>
         </footer>

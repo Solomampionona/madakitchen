@@ -1,12 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto+Mono:wght@100&family=Satisfy&display=swap');
+
+@import url();
+
 body {
   position: relative;
   min-height: 100vh;
+  font-weight: bold;
   
-}
+  
+} 
 
+.nav-item ,
+.nav-link a {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
+}
 .navbar_item_custom,
 .navbar_item_custom a {
   color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
   
 }
 
@@ -17,16 +34,20 @@ body {
   width: 100%;
   background-color: #030c17;
   padding-top: 25px;
-}
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Mono', monospace; 
+ } 
 
 .product-item {
   margin-top: 50px;
-}
 
+}
 .product-item h5 {
   text-transform: uppercase;
-  font-size: 15px;
+  font: bold;
+  font-size: 17px ;
   margin-bottom: 1px;
+
 }
 
 .product-container {
@@ -34,9 +55,12 @@ body {
 }
 
 .product-subtitle {
-  font-size: 14px;
+  font-size: 15px;
   display: block;
   margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  
 }
 
 .product-price {
@@ -59,9 +83,9 @@ body {
 }
 
 .form-check {
-  background-color: #f4f8ff;
+  background-color: #8cd5d4;
   padding: 20px 65px;
-  margin-top: 7px;
+  
 }
 
 .col-form-label {
@@ -72,10 +96,6 @@ body {
   background-color: #f4f8ff;
   margin-top: 17px;
   padding: 16px;
-}
-
-.update-state {
-  margin-right: 20px;
 }
 
 .account-item {
@@ -94,3 +114,23 @@ body {
   color: #778ca3;
   text-decoration: none;
 }
+/* .badge {
+  bottom: 15px;
+  left: 35px;
+} */
+/* .produit{
+  font-size: 25px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
+}
+/* thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+} */

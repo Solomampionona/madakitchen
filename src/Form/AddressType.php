@@ -35,7 +35,7 @@ class AddressType extends AbstractType
                 ]
             ])
             ->add('company',TextType::class,[
-                'label' => 'Votre société',
+                'label' => 'Raison Sociale (facultatif)',
                 'required'=>false,
                 'attr' =>[
                     'placeholder'=>'Facultatif'
@@ -54,7 +54,7 @@ class AddressType extends AbstractType
                 ]
             ])
             ->add('city',TextType::class,[
-                'label' => 'votre ville',
+                'label' => 'Votre ville',
                 'attr' =>[
                     'placeholder'=>'Entrez votre ville'
                 ]

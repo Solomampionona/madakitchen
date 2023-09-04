@@ -20,7 +20,7 @@ class OrderCancelController extends AbstractController
     #[Route('/commande/erreur/{stripeSessionId}', name: 'order_cancel')]
     public function index(Cart $cart,$stripeSessionId): Response
     {
-    $order = $this->entityManager->getRepository(Order::class)->findOneByStripeSeesionId($stripeSessionId);
+    $order = $this->entityManager->getRepository(Order::class)->findOneByStripeSessionId($stripeSessionId);
 
     if (!$order || $order->getUser() != $this->getUser()){
         return $this->redirectToRoute('home');
