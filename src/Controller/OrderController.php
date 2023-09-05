@@ -22,7 +22,7 @@ class OrderController extends AbstractController
         $this->entityManager=$entityManager;
     }
 
-    #[Route('/commande', name: 'order')]
+    #[Route('/commande', name: 'order',schemes: ['https'])]
     public function index(Cart $cart,Request $request): Response
     {   
         if (!$this->getUser()->getAddresses()->getValues()){

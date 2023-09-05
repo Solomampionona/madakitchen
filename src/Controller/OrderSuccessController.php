@@ -18,7 +18,7 @@ class OrderSuccessController extends AbstractController
         $this->entityManager =$entityManager;
     }
 
-    #[Route('/commande/merci/{stripeSessionId}', name: 'order_validate')]
+    #[Route('/commande/merci/{stripeSessionId}', name: 'order_validate',schemes: ['https'])]
     public function index(Cart $cart,$stripeSessionId ): Response
     {
         $order = $this->entityManager->getRepository(Order::class)->findOneBy(['stripeSessionId'=>$stripeSessionId]);

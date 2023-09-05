@@ -20,7 +20,7 @@ class ProductController extends AbstractController
         $this->entityManager=$entityManager;
     }
 
-    #[Route('/nos-produits', name: 'products')]
+    #[Route('/nos-produits', name: 'products', schemes: ['https'])]
 
    
     public function index(Request $request): Response

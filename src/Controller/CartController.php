@@ -19,7 +19,7 @@ class CartController extends AbstractController
         $this->entityManager =$entityManager;
     }
 
-    #[Route('/mon-panier', name: 'cart')]
+    #[Route('/mon-panier', name: 'cart',schemes: ['https'])]
     public function index(Cart $cart): Response
     {   
 
@@ -28,7 +28,7 @@ class CartController extends AbstractController
         ]);
     }
 
-    #[Route('/cart/add/{id}', name: 'add_to_cart')]
+    #[Route('/cart/add/{id}', name: 'add_to_cart',schemes: ['https'])]
     public function add(Cart $cart,$id): Response
     {
         $cart->add($id);
@@ -37,7 +37,7 @@ class CartController extends AbstractController
     }
     
 
-    #[Route('/cart/remove', name: 'remove_my_cart')]
+    #[Route('/cart/remove', name: 'remove_my_cart',schemes: ['https'])]
     public function remove(Cart $cart): Response
     {
         $cart->remove();
@@ -45,7 +45,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute('products');
     }
 
-    #[Route('/cart/delete{id}', name: 'delete_to_cart')]
+    #[Route('/cart/delete{id}', name: 'delete_to_cart',schemes: ['https'])]
     public function delete(Cart $cart,$id): Response
     {
         $cart->delete($id);
@@ -53,7 +53,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute('cart');
     }
 
-    #[Route('/cart/decrease{id}', name: 'decrease_to_cart')]
+    #[Route('/cart/decrease{id}', name: 'decrease_to_cart',schemes: ['https'])]
     public function decrease(Cart $cart,$id): Response
     {
         $cart->decrease($id);

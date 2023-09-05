@@ -19,7 +19,7 @@ class HomeController extends AbstractController
         $this->entityManager=$entityManager;
     }
 
-    #[Route('/', name: 'home')]
+    #[Route('/', name: 'home',schemes: ['https'])]
     public function index(): Response
 
     {

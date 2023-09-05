@@ -17,7 +17,7 @@ class OrderCancelController extends AbstractController
         $this->entityManager =$entityManager;
     }
 
-    #[Route('/commande/erreur/{stripeSessionId}', name: 'order_cancel')]
+    #[Route('/commande/erreur/{stripeSessionId}', name: 'order_cancel',schemes: ['https'])]
     public function index(Cart $cart,$stripeSessionId): Response
     {
     $order = $this->entityManager->getRepository(Order::class)->findOneByStripeSessionId($stripeSessionId);

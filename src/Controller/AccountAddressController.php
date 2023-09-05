@@ -49,7 +49,7 @@ class AccountAddressController extends AbstractController
     }
     } 
 
-    #[Route('/compte/modifier-une-adresse/{id}', name: 'account_address_edit')]
+    #[Route('/compte/modifier-une-adresse/{id}', name: 'account_address_edit',schemes: ['https'])]
     public function edit(Request $request,$id): Response
     {   
        

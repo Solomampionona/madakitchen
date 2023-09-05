@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends AbstractController
 {
-    #[Route('/nous-contacter', name: 'contact')]
+    #[Route('/nous-contacter', name: 'contact',schemes: ['https'])]
     public function index(Request $request): Response
     {   
         $form = $this->createForm(ContactType::class);

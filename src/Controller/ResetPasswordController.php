@@ -23,7 +23,7 @@ class ResetPasswordController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/mot-de-passe-oublie', name: 'reset_password')]
+    #[Route('/mot-de-passe-oublie', name: 'reset_password',schemes: ['https'])]
     public function index(Request $request): Response
     {
         if ($this->getUser()) {
@@ -60,7 +60,7 @@ class ResetPasswordController extends AbstractController
 
         return $this->render('reset_password/index.html.twig');
     }
-    #[Route('/modifier-mon-mot-de-passe-oublie/{token}', name: 'update_password')]
+    #[Route('/modifier-mon-mot-de-passe-oublie/{token}', name: 'update_password',schemes: ['https'])]
     public function update(Request $request, $token, UserPasswordHasher $encoder): Response
     {
         $reset_password = $this->entityManager->getRepository(ResetPassword::class)->findOneByToken($token);

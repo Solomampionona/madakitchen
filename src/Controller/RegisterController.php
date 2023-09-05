@@ -21,7 +21,7 @@ class RegisterController extends AbstractController
     {
         $this->entityManager = $entityManager;
     }
-    #[Route('/inscription', name: 'register')]
+    #[Route('/inscription', name: 'register', schemes: ['https'])]
     public function index(Request $request, UserPasswordHasherInterface $encoder)
     {
         $notification = null;

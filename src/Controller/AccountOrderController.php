@@ -17,7 +17,7 @@ class AccountOrderController extends AbstractController
     {
         $this->entityManager= $entityManager;
     }
-    #[Route('/compte/mes-commandes', name: 'account_order')]
+    #[Route('/compte/mes-commandes', name: 'account_order',schemes: ['https'])]
     public function index(): Response
     {
         $orders=$this->entityManager->getRepository(Order::class)->findSuccessOrders($this->getUser());
